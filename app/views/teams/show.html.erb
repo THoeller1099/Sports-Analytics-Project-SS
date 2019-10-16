@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>Abbr:</strong>
+  <%= @team.abbr %>
+</p>
+
+<p>
   <strong>Location:</strong>
   <%= @team.location %>
 </p>
@@ -20,10 +25,6 @@
   <%= @team.coach %>
 </p>
 
-<p>
-  <strong>Record:</strong>
-  <%= @team.record %>
-</p>
 
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>
