@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_26_021218) do
+ActiveRecord::Schema.define(version: 2019_10_16_051134) do
 
   create_table "players", force: :cascade do |t|
     t.string "first_name"
@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 2019_09_26_021218) do
     t.string "location"
     t.string "roster"
     t.string "coach"
-    t.string "record"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "abbr"
   end
 
 end
