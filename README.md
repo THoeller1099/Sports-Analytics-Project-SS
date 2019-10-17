@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sports Analytics Application:
 
-Things you may want to cover:
+Current Features:
+Ability to view basic player statistics for top 400 NBA players
+Ability to view all teams
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Upcoming Features:
+Ability to sort players by each statistic (best to worst, worst to best)
+Ability to view team rosters
+Ability to create interesting visualizations based on statistics
+more...
