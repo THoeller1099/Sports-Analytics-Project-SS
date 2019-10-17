@@ -26,7 +26,7 @@
     Player.create([player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, player12, player13, player14, player15])
 =end
 
-# seeding from csv file
+# player seeding from csv file
 df = Daru::DataFrame.from_csv('app/data/NBApoints.csv')
 nms = df["Player"]
 tms = df["Tm"]
@@ -48,3 +48,18 @@ nms.zip(tms, pts, asts, rbds).each do |nm, tm, pt, ast, rbd|
 	Player.create([player])
 end
 
+# team seeding from csv file
+df_teams = Daru::DataFrame.from_csv('app/data/teams.csv')
+tm_names = df_teams["name"]
+tm_abbrs = df_teams["prefix_1"]
+
+tm_names.zip(tm_abbrs).each do |tm_name, tm_abbr|
+    team = {name: "", abbr: "", location: "", coach: ""}
+    team_full = tm_name.split()
+    nickname = team_full[1]
+    loc = team_full[0]
+    team[:name] = nickname
+    team[:abbr] = tm_abbr
+    team[:location] = loc
+    Team.create([team])
+end
