@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_142359) do
+ActiveRecord::Schema.define(version: 2019_10_23_191458) do
 
   create_table "games", force: :cascade do |t|
     t.string "date"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_10_21_142359) do
     t.boolean "ot"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "team_id"
     t.index ["away"], name: "index_games_on_away"
     t.index ["home"], name: "index_games_on_home"
   end
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_10_21_142359) do
     t.float "points"
     t.float "assists"
     t.float "rebounds"
+    t.integer "team_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -45,4 +47,6 @@ ActiveRecord::Schema.define(version: 2019_10_21_142359) do
     t.string "abbr"
   end
 
+  add_foreign_key "games", "teams"
+  add_foreign_key "players", "teams"
 end
