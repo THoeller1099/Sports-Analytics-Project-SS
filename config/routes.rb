@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :games
   get 'home/index'
   resources :teams
   resources :players

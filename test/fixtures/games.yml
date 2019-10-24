@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: MyString
+  home: 
+  away: 
+  home_score: 1
+  away_score: 1
+  ot: false
+
+two:
+  date: MyString
+  home: 
+  away: 
+  home_score: 1
+  away_score: 1
+  ot: false
