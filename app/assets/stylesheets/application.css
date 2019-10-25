@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+ 
+ body {
+     margin-left: 40px;
+     margin-right: 40px;
+     background-color: #838;
+     color: #DEF;
+ }
+ 
+ .separator {
+  margin: 10px;
+ }
+ 
+ .table_container {
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #888;
+  padding: 10px;
+  display: inline-block;
+  background-color: #DEF;
+  color: #333;
+ }
+
+/* This may come in handy once the tables are in so I'm leaving it here for now
+.list {
+ display: flex;
+ flex-direction: row;
+ align-items: stretch;
+}*/
