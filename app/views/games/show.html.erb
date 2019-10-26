@@ -16,24 +16,20 @@
 </p>
 
 <p>
-  <strong>Home score:</strong>
+  <strong>Home Score:</strong>
   <%= @game.home_score %>
 </p>
 
 <p>
-  <strong>Away score:</strong>
+  <strong>Away Score:</strong>
   <%= @game.away_score %>
 </p>
 
 <p>
-  <strong>Ot:</strong>
+  <strong>OT:</strong>
   <%= @game.ot %>
 </p>
 
-<p>
-  <strong>Team id:</strong>
-  <%= @game.team_id %>
-</p>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

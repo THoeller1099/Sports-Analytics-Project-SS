@@ -1,18 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>First name:</strong>
+  <strong>Year:</strong>
+  <%= @player.year %>
+</p>
+
+<p>
+  <strong>First Name:</strong>
   <%= @player.first_name %>
 </p>
 
 <p>
-  <strong>Last name:</strong>
+  <strong>Last Name:</strong>
   <%= @player.last_name %>
 </p>
 
 <p>
-  <strong>Team:</strong>
-  <%= @player.team %>
+  <strong>Position:</strong>
+  <%= @player.position %>
+</p>
+
+<p>
+  <strong>Team Name:</strong>
+  <%= @player.team_name %>
 </p>
 
 <p>
@@ -31,7 +41,47 @@
 </p>
 
 <p>
-  <strong>Team id:</strong>
+  <strong>Blocks:</strong>
+  <%= @player.blocks %>
+</p>
+
+<p>
+  <strong>Steals:</strong>
+  <%= @player.steals %>
+</p>
+
+<p>
+  <strong>TwoPtFgAtt:</strong>
+  <%= @player.twoPtFgAtt %>
+</p>
+
+<p>
+  <strong>TwoPtFgMade:</strong>
+  <%= @player.twoPtFgMade %>
+</p>
+
+<p>
+  <strong>ThreePtFgAtt:</strong>
+  <%= @player.threePtFgAtt%>
+</p>
+
+<p>
+  <strong>ThreePtFgMade:</strong>
+  <%= @player.threePtFgMade %>
+</p>
+
+<p>
+  <strong>FreeThrowAtt:</strong>
+  <%= @player.freeThrowAtt %>
+</p>
+
+<p>
+  <strong>FreeThrowMade:</strong>
+  <%= @player.freeThrowMade %>
+</p>
+
+<p>
+  <strong>Team Id:</strong>
   <%= @player.team_id %>
 </p>
 

@@ -7,6 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # original seeding for players table
+Team.delete_all
+Player.delete_all
+Game.delete_all
+
 =begin
     player1 = {first_name: "Lebron", last_name: "James", team: "Lakers", points: 156.0, assists: 81.0, rebounds: 100.0}
     player2 = {first_name: "James", last_name: "Harden", team: "Rockets", points: 144.0, assists: 79.0, rebounds: 85.0}
@@ -24,7 +28,7 @@
     player14 = {first_name: "Kyrie", last_name: "Irving", team: "Nets", points: 86.0, assists: 72.0, rebounds: 54.0}
     player15 = {first_name: "Bradley", last_name: "Beal", team: "Wizards", points: 83.0, assists: 61.0, rebounds: 57.0}
     Player.create([player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, player12, player13, player14, player15])
-=end
+
 
 # player seeding from csv file
 df = Daru::DataFrame.from_csv('app/data/NBApoints.csv')
@@ -63,3 +67,4 @@ tm_names.zip(tm_abbrs).each do |tm_name, tm_abbr|
     team[:location] = loc
     Team.create([team])
 end
+=end
