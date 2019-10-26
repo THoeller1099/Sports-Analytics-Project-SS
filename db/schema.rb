@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_26_204809) do
+ActiveRecord::Schema.define(version: 2019_10_26_232557) do
 
   create_table "games", force: :cascade do |t|
     t.string "date"
@@ -23,6 +23,11 @@ ActiveRecord::Schema.define(version: 2019_10_26_204809) do
     t.string "time"
     t.index ["away"], name: "index_games_on_away"
     t.index ["home"], name: "index_games_on_home"
+  end
+
+  create_table "games_teams", id: false, force: :cascade do |t|
+    t.integer "team_id"
+    t.integer "game_id"
   end
 
   create_table "players", force: :cascade do |t|
@@ -57,13 +62,6 @@ ActiveRecord::Schema.define(version: 2019_10_26_204809) do
     t.integer "games_played"
     t.integer "wins"
     t.integer "losses"
-  end
-
-  create_table "teams_games", id: false, force: :cascade do |t|
-    t.integer "team_id"
-    t.integer "game_id"
-    t.index ["game_id"], name: "index_teams_games_on_game_id"
-    t.index ["team_id"], name: "index_teams_games_on_team_id"
   end
 
   add_foreign_key "players", "teams"
