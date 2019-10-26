@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Year:</strong>
+  <%= @team.year %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @team.location %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @team.name %>
 </p>
@@ -11,15 +21,20 @@
 </p>
 
 <p>
-  <strong>Location:</strong>
-  <%= @team.location %>
+  <strong>Games Played:</strong>
+  <%= @team.games_played %>
 </p>
-
 
 <p>
-  <strong>Coach:</strong>
-  <%= @team.coach %>
+  <strong>Wins:</strong>
+  <%= @team.wins %>
 </p>
+
+<p>
+  <strong>Losses:</strong>
+  <%= @team.losses %>
+</p>
+
 
 
 <%= link_to 'Edit', edit_team_path(@team) %> |

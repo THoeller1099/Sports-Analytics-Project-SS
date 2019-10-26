@@ -5,10 +5,13 @@
 <table>
   <thead>
     <tr>
+      <th>Year</th>
+      <th>Location</th>
       <th>Name</th>
       <th>Abbr</th>
-      <th>Location</th>
-      <th>Coach</th>
+      <th>Games Played</th>
+      <th>Wins</th>
+      <th>Losses</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +19,13 @@
   <tbody>
     <% @teams.each do |team| %>
       <tr>
+        <td><%= team.year %></td>
+        <td><%= team.location %></td>
         <td><%= team.name %></td>
         <td><%= team.abbr %></td>
-        <td><%= team.location %></td>
-        <td><%= team.coach %></td>
+        <td><%= team.games_played %></td>
+        <td><%= team.wins %></td>
+        <td><%= team.losses %></td>
         <td><%= link_to 'Show', team %></td>
         <td><%= link_to 'Edit', edit_team_path(team) %></td>
         <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>

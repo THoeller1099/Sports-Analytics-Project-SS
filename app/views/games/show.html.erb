@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>Time:</strong>
+  <%= @game.time %>
+</p>
+
+<p>
   <strong>Home:</strong>
   <%= @game.home %>
 </p>
@@ -25,10 +30,6 @@
   <%= @game.away_score %>
 </p>
 
-<p>
-  <strong>OT:</strong>
-  <%= @game.ot %>
-</p>
 
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
