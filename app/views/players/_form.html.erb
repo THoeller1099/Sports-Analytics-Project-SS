@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :year %>
+    <%= form.text_field :year %>
+  </div>
+
+  <div class="field">
     <%= form.label :first_name %>
     <%= form.text_field :first_name %>
   </div>
@@ -20,10 +25,15 @@
     <%= form.label :last_name %>
     <%= form.text_field :last_name %>
   </div>
+  
+  <div class="field">
+    <%= form.label :position %>
+    <%= form.text_field :position %>
+  </div>
 
   <div class="field">
-    <%= form.label :team %>
-    <%= form.text_field :team %>
+    <%= form.label :team_name %>
+    <%= form.text_field :team_name %>
   </div>
 
   <div class="field">
@@ -41,6 +51,46 @@
     <%= form.number_field :rebounds %>
   </div>
   
+  <div class="field">
+    <%= form.label :blocks %>
+    <%= form.number_field :blocks %>
+  </div>
+
+  <div class="field">
+    <%= form.label :steals %>
+    <%= form.number_field :steals %>
+  </div>
+
+  <div class="field">
+    <%= form.label :twoPtFgAtt %>
+    <%= form.number_field :twoPtFgAtt %>
+  </div>
+
+  <div class="field">
+    <%= form.label :twoPtFgMade %>
+    <%= form.number_field :twoPtFgMade %>
+  </div>
+
+  <div class="field">
+    <%= form.label :threePtFgAtt %>
+    <%= form.number_field :threePtFgAtt %>
+  </div>
+
+  <div class="field">
+    <%= form.label :threePtFgMade %>
+    <%= form.number_field :threePtFgMade %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :freeThrowAtt %>
+    <%= form.number_field :freeThrowAtt %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :freeThrowMade %>
+    <%= form.number_field :freeThrowMade%>
+  </div>
+
   <div class="field">
     <%= form.label :team_id %>
     <%= form.number_field :team_id %>

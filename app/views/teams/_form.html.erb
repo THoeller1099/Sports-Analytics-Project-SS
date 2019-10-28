@@ -10,6 +10,16 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.text_field :year %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
 
   <div class="field">
     <%= form.label :name %>
@@ -20,17 +30,19 @@
     <%= form.label :abbr %>
     <%= form.text_field :abbr %>
   </div>
-
+  
   <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
+    <%= form.label :games_played %>
+    <%= form.number_field :games_played %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :wins %>
+    <%= form.number_field :losses %>
   </div>
 
 
-  <div class="field">
-    <%= form.label :coach %>
-    <%= form.text_field :coach %>
-  </div>
+
 
 
   <div class="actions">

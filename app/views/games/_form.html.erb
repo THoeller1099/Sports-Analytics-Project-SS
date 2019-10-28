@@ -15,6 +15,11 @@
     <%= form.label :date %>
     <%= form.text_field :date %>
   </div>
+  
+  <div class="field">
+    <%= form.label :time %>
+    <%= form.text_field :time %>
+  </div>
 
   <div class="field">
     <%= form.label :home %>
@@ -36,15 +41,7 @@
     <%= form.number_field :away_score %>
   </div>
 
-  <div class="field">
-    <%= form.label :ot %>
-    <%= form.check_box :ot %>
-  </div>
   
-  <div class="field">
-    <%= form.label :team_id %>
-    <%= form.check_box :team_id %>
-  </div>
 
   <div class="actions">
     <%= form.submit %>
