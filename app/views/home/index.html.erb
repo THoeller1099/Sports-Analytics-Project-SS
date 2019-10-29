@@ -22,14 +22,14 @@
         </thead>
         
         <tbody>
-            <% @players.each do |player| %>
+            <% @players.where(year:"2018-2019").each do |player| %>
                 <tr>
-                    <td><%= player.first_name %> <%= player.last_name %></td>
-                    <td><%= player.team %></td>
+                    <% name = player.first_name + " " + player.last_name %>
+                    <td><%= link_to name, player %></td>
+                    <td><%= player.team_name %></td>
                     <td><%= player.points %></td>
                     <td><%= player.assists %></td>
                     <td><%= player.rebounds %></td>
-                    <td><%= link_to 'Show', player %></td>
                 </tr>
             <% end %>
         </tbody>
@@ -51,12 +51,11 @@
         </thead>
         
         <tbody>
-            <% @teams.each do |team| %>
+            <% @teams.where(year: "2018-2019").each do |team| %>
               <tr>
-                <td><%= team.name %></td>
+                <td><%= link_to team.name, team %></td>
                 <td><%= team.abbr %></td>
                 <td><%= team.location %></td>
-                <td><%= link_to 'Show', team %></td>
               </tr>
             <% end %>
         </tbody>
