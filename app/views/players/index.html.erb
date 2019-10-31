@@ -2,58 +2,59 @@
 
 <h1>Players</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Year</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Position</th>
-      <th>Team Name</th>
-      <th>Points</th>
-      <th>Assists</th>
-      <th>Rebounds</th>
-      <th>Blocks</th>
-      <th>Steals</th>
-      <th>TwoPtFgAtt</th>
-      <th>TwoPtFgMade</th>
-      <th>ThreePtFgAtt</th>
-      <th>ThreePtFgMade</th>
-      <th>FreeThrowAtt</th>
-      <th>FreeThrowMade</th>
-      <th>Team Id</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @players.each do |player| %>
+<div class="table_container">
+  <table>
+    <thead>
       <tr>
-        <td><%= player.year %></td>
-        <td><%= player.first_name %></td>
-        <td><%= player.last_name %></td>
-        <td><%= player.position %></td>
-        <td><%= player.team_name %></td>
-        <td><%= player.points %></td>
-        <td><%= player.assists %></td>
-        <td><%= player.rebounds %></td>
-        <td><%= player.blocks %></td>
-        <td><%= player.steals %></td>
-        <td><%= player.twoPtFgAtt %></td>
-        <td><%= player.twoPtFgMade%></td>
-        <td><%= player.threePtFgAtt %></td>
-        <td><%= player.threePtFgMade %></td>
-        <td><%= player.freeThrowAtt %></td>
-        <td><%= player.freeThrowMade %></td>
-        <td><%= player.team_id %></td>
-        <td><%= link_to 'Show', player %></td>
-        <td><%= link_to 'Edit', edit_player_path(player) %></td>
-        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Year</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Position</th>
+        <th>Team Name</th>
+        <th>Points</th>
+        <th>Assists</th>
+        <th>Rebounds</th>
+        <th>Blocks</th>
+        <th>Steals</th>
+        <th>TwoPtFgAtt</th>
+        <th>TwoPtFgMade</th>
+        <th>ThreePtFgAtt</th>
+        <th>ThreePtFgMade</th>
+        <th>FreeThrowAtt</th>
+        <th>FreeThrowMade</th>
+        <th>Team Id</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
+    </thead>
+  
+    <tbody>
+      <% @players.each do |player| %>
+        <tr>
+          <td><%= player.year %></td>
+          <td><%= player.first_name %></td>
+          <td><%= player.last_name %></td>
+          <td><%= player.position %></td>
+          <td><%= player.team_name %></td>
+          <td><%= player.points %></td>
+          <td><%= player.assists %></td>
+          <td><%= player.rebounds %></td>
+          <td><%= player.blocks %></td>
+          <td><%= player.steals %></td>
+          <td><%= player.twoPtFgAtt %></td>
+          <td><%= player.twoPtFgMade%></td>
+          <td><%= player.threePtFgAtt %></td>
+          <td><%= player.threePtFgMade %></td>
+          <td><%= player.freeThrowAtt %></td>
+          <td><%= player.freeThrowMade %></td>
+          <td><%= player.team_id %></td>
+          <td><%= link_to 'Show', player %></td>
+          <td><%= link_to 'Edit', edit_player_path(player) %></td>
+          <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
 <%= link_to 'New Player', new_player_path %>
