@@ -25,6 +25,15 @@
   color: #EEE;
  }
  
+ #web-header {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  align-self: stretch;
+  color: #727;
+ }
+ 
  #zion {
   display: flex;
   height: 300px;
