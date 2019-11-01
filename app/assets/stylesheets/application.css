@@ -46,6 +46,7 @@
  }
  
  .table_container {
+  margin-bottom: 10px;
   align-self: stretch;
   border-radius: 10px;
   border-style: solid;
