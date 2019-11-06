@@ -6,29 +6,29 @@
     <h2><%= link_to 'Players', players_path %></h2>
     <div>
     </div>
-    <table class="table table-striped table-bordered table-hover">
+    <table class="table table-striped table-bordered table-hover" data-toggle="table" data-sortable="true" id="table">
         <thead>
             <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Position</th>
-                <th>Team Name</th>
-                <th>Points</th>
-                <th>Assists</th>
-                <th>Rebounds</th>
-                <th>Blocks</th>
-                <th>Steals</th>
-                <th>TwoPtFgAtt</th>
-                <th>TwoPtFgMade</th>
-                <th>ThreePtFgAtt</th>
-                <th>ThreePtFgMade</th>
-                <th>FreeThrowAtt</th>
-                <th>FreeThrowMade</th>
+                <th data-sortable="true">First Name</th>
+                <th data-sortable="true"><%= link_to "Last Name", :sort => "last_name" %></th>
+                <th data-sortable="true">Position</th>
+                <th data-sortable="true">Team Name</th>
+                <th data-sortable="true"><%= link_to "Points", :sort => "points" %></th>
+                <th data-sortable="true"><%= link_to "Assists", :sort => "assists" %></th>
+                <th data-sortable="true"><%= link_to "Rebounds", :sort => "rebounds" %></th>
+                <th data-sortable="true"><%= link_to "Blocks", :sort => "blocks" %></th>
+                <th data-sortable="true"><%= link_to "Steals", :sort => "steals" %></th>
+                <th data-sortable="true"><%= link_to "2PA", :sort => "twoPtFgAtt" %></th>
+                <th data-sortable="true"><%= link_to "2PM", :sort => "twoPtFgMade" %></th>
+                <th data-sortable="true"><%= link_to "3PA", :sort => "threePtFgAtt" %></th>
+                <th data-sortable="true"><%= link_to "3PM", :sort => "threePtFgMade" %></th>
+                <th data-sortable="true"><%= link_to "FTA", :sort => "freeThrowAtt" %></th>
+                <th data-sortable="true"><%= link_to "FTM", :sort => "freeThrowMade" %></th>
             </tr>
         </thead>
         
         <tbody>
-            <% @players.where(year:"2018-2019").each do |player| %>
+            <% @players.each do |player| %>
                 <tr>
                     <td><%= link_to player.first_name, player %></td>
                     <td><%= link_to player.last_name, player %></td>

@@ -62,6 +62,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
+    bootstrap-table-rails (1.13.4)
     builder (3.2.3)
     byebug (11.0.1)
     capybara (3.29.0)
@@ -210,6 +211,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
+  bootstrap-table-rails
   byebug
   capybara (>= 2.15)
   daru
@@ -219,6 +221,7 @@ DEPENDENCIES
   pg (~> 1.1, >= 1.1.4)
   puma (~> 3.11)
   rails (~> 6.0.0)
+  rake
   sass-rails (~> 5)
   selenium-webdriver
   spring
