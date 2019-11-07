@@ -40,7 +40,7 @@
 </p>
 
 <% Player.where(team_id: @team.id).each do |player| %>
-  <p><%= player.first_name + " " + player.last_name + "     " + player.position%></p>
+  <p><%= player.first_name + " " + player.last_name + "     " + player.position %></p>
 <% end %>
 
 
