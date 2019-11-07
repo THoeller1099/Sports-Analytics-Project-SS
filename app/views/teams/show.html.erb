@@ -35,6 +35,13 @@
   <%= @team.losses %>
 </p>
 
+<p>
+  <strong>Roster</strong>
+</p>
+
+<% Player.where(team_id: @team.id).each do |player| %>
+  <p><%= player.first_name + " " + player.last_name + "     " + player.position%></p>
+<% end %>
 
 
 <%= link_to 'Edit', edit_team_path(@team) %> |
