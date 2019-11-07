@@ -21,9 +21,9 @@
       <% @teams.each do |team| %>
         <tr>
           <td><%= team.year %></td>
-          <td><%= team.location %></td>
+          <td><%= link_to team.location, team %></td>
           <td><%= link_to team.name, team %></td>
-          <td><%= team.abbr %></td>
+          <td><%= link_to team.abbr, team %></td>
           <td><%= team.games_played %></td>
           <td><%= team.wins %></td>
           <td><%= team.losses %></td>
