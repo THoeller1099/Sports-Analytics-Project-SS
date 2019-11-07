@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   get 'players/index'
   get 'games/index'
   get 'teams/index'
+  
+  # Routes for Google authentication
+  get 'auth/:provider/callback', to: 'sessions#googleAuth'
+  get 'auth/failure', to: redirect('/')
 end
