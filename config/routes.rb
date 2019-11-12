@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  #resources :games_teams
   resources :games
   get 'home/index'
   resources :teams
@@ -8,4 +9,5 @@ Rails.application.routes.draw do
   get 'players/index'
   get 'games/index'
   get 'teams/index'
+  #get 'games_teams/index'
 end
