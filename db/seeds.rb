@@ -207,6 +207,8 @@ dates.zip(times, home_abrs, away_abrs, home_scrs, away_scrs).each do |dt, ti, h,
 	game_2019[:home_score] = hs
 	game_2019[:away_score] = as
 	Game.create([game_2019])
+	GamesTeam.create({team_id: Team.find_by(abbr: h, year:"2018-2019").id, game_id: Game.find_by(date: dt, home: h).id})
+	GamesTeam.create({team_id: Team.find_by(abbr: a, year:"2018-2019").id, game_id: Game.find_by(date: dt, home: h).id})
 end
 
 # add games data 2018
@@ -226,6 +228,8 @@ dates.zip(times, home_abrs, away_abrs, home_scrs, away_scrs).each do |dt, ti, h,
 	game_2018[:home_score] = hs
 	game_2018[:away_score] = as
 	Game.create([game_2018])
+	GamesTeam.create({team_id: Team.find_by(abbr: h, year:"2017-2018").id, game_id: Game.find_by(date: dt, home: h).id})
+	GamesTeam.create({team_id: Team.find_by(abbr: a, year:"2017-2018").id, game_id: Game.find_by(date: dt, home: h).id})
 end
 
 # add games data 2017
@@ -245,4 +249,6 @@ dates.zip(times, home_abrs, away_abrs, home_scrs, away_scrs).each do |dt, ti, h,
 	game_2017[:home_score] = hs
 	game_2017[:away_score] = as
 	Game.create([game_2017])
+	GamesTeam.create({team_id: Team.find_by(abbr: h, year:"2016-2017").id, game_id: Game.find_by(date: dt, home: h).id})
+	GamesTeam.create({team_id: Team.find_by(abbr: a, year:"2016-2017").id, game_id: Game.find_by(date: dt, home: h).id})
 end
