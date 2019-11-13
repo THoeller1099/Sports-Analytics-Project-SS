@@ -1,4 +1,20 @@
 class SessionsController < ApplicationController
+    
+    def new
+    end
+    
+    def create
+        user = User.find_by(email: params[:session][:email].downcase)
+        if user
+            googleAuth
+        else
+            render 'new'
+        end
+    end
+    
+    def destroy
+    end
+    
     def googleAuth
         # Get access tokens from the google server
         access_token = request.env["omniauth.auth"]
@@ -11,6 +27,6 @@ class SessionsController < ApplicationController
         refresh_token = access_token.credentials.refresh_token
         user.google_refresh_token = refresh_token if refresh_token.present?
         user.save
-        redirect_to root_path
+        redirect_to user
     end
 end
