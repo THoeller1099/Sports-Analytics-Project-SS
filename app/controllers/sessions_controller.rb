@@ -29,4 +29,5 @@ class SessionsController < ApplicationController
         user.save
         redirect_to user
     end
+    
 end
