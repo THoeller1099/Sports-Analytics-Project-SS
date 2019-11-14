@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_11_212653) do
+
+ActiveRecord::Schema.define(version: 2019_11_13_031430) do
 
   create_table "games", force: :cascade do |t|
     t.string "date"
@@ -64,6 +65,14 @@ ActiveRecord::Schema.define(version: 2019_11_11_212653) do
     t.integer "games_played"
     t.integer "wins"
     t.integer "losses"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
   add_foreign_key "players", "teams"
