@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   get 'home/index'
   resources :teams
   resources :players
+  resources :schedules
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'home#index'
   get 'players/index'
   get 'games/index'
   get 'teams/index'
+  get 'schedules/index'
   #get 'games_teams/index'
 end
