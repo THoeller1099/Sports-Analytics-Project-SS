@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  resources :users
   #resources :games_teams
   resources :games
   get 'home/index'
@@ -9,5 +11,16 @@ Rails.application.routes.draw do
   get 'players/index'
   get 'games/index'
   get 'teams/index'
+  get '/signup', to: 'users#new'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+  
+  # Routes for Google authentication
+  get 'auth/:provider/callback', to: 'sessions#googleAuth'
+  get 'auth/failure', to: redirect('/')
+  
+  #User profile
+  resources :users
   #get 'games_teams/index'
 end
