@@ -69,8 +69,8 @@
             <% @teams.where(year: "2018-2019").each do |team| %>
               <tr>
                 <td><%= link_to team.name, team %></td>
-                <td><%= team.abbr %></td>
-                <td><%= team.location %></td>
+                <td><%= link_to team.abbr, team %></td>
+                <td><%= link_to team.location, team %></td>
               </tr>
             <% end %>
         </tbody>

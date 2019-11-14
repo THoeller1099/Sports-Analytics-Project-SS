@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+
   resources :users
+  #resources :games_teams
   resources :games
   get 'home/index'
   resources :teams
@@ -9,7 +11,6 @@ Rails.application.routes.draw do
   get 'players/index'
   get 'games/index'
   get 'teams/index'
-  
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -21,4 +22,5 @@ Rails.application.routes.draw do
   
   #User profile
   resources :users
+  #get 'games_teams/index'
 end
