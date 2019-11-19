@@ -18,11 +18,11 @@ class Http
     puts tot_pages
     for num in 1..tot_pages do
       response = HTTParty.get(API_players + "?per_page=100&page=#{num}")
-      data += response.parsed_response["data"]
-      data.each do |item|
-        puts item["first_name"]
-        puts item["last_name"]
-        puts item["id"]
+      data = response.parsed_response["data"]
+      data.each do |player|
+        puts player["first_name"]
+        puts player["last_name"]
+        puts player["id"]
       end
     end
     #puts response.body
