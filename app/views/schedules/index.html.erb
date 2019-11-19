@@ -1,14 +1,17 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
 <p id="notice"><%= notice %></p>
 
 <h1> Schedules </h1>
 <br><br>
 <h3> Select Team to View Schedule </h3>
 
-<%= select_tag 'team', options_for_select(@teams.where(year: "2018-2019").collect{ |team| team.abbr}, prompt: "Select Team") %>
+
+<%= select_tag 'team', options_for_select(@teams.where(year: "2018-2019").collect{ |team| team.abbr}, prompt: "Select Team"), :id => "select_team" %>
+
 <br>
 <button onclick="window.location.href='/schedules'">Apply</button>
-
-
+<% @team = 5 %>
+<h3 id="text_to_be_changed" ><%= @team %></h3>
 <% tm_id = @team  %>
 <% tm = @teams.find_by(id: tm_id) %>
 <br><br>
@@ -59,7 +62,7 @@
           <% if (game.home == tm.abbr)  %>
             <td><%= game.away %></td>
           <% else %>
-            <td><%= game.home %></td>
+            <td><%= "@" + game.home %></td>
           <% end %>
           <% if (game.home_score > game.away_score) %>
             <td><%= "W " + game.home_score.to_s + "-" + game.away_score.to_s %></td>
@@ -72,5 +75,7 @@
       <% end %>
     </tbody>
   </table>
+
 </div>
 <br>
+
