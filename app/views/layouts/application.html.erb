@@ -21,7 +21,7 @@
         <a class="nav-item nav-link font-weight-bold" href="/teams" style="color: #727;">Teams</a>
         <a class="nav-item nav-link font-weight-bold" href="/games" style="color: #727;">Games</a>
         <a class="nav-item nav-link font-weight-bold" href="/auth/google_oauth2" style="color: #727;">Login with Google</a>
-        <a class="nav-item font-weight-bold" style="color #727;"><%= current_user %></a>
+        <a class="nav-item font-weight-bold" style="color #727;"><%= session[:user_id] %></a>
       </div>
     </div>
   </nav>
