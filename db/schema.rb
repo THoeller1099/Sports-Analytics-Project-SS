@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2019_11_13_031430) do
+ActiveRecord::Schema.define(version: 2019_11_22_005636) do
 
   create_table "games", force: :cascade do |t|
     t.string "date"
@@ -53,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_11_13_031430) do
     t.float "freeThrowMade"
     t.float "threePtFgAtt"
     t.float "threePtFgMade"
+    t.string "user_name"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(version: 2019_11_13_031430) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
+    t.string "player"
+    t.string "password"
   end
 
   add_foreign_key "players", "teams"
