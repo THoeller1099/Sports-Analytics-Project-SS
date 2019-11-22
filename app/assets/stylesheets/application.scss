@@ -14,7 +14,12 @@
  *= require_self
  *= require bootstrap-table/bootstrap-table
  */
- 
+ input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+ }
+
  body {
   display: flex;
   flex-direction: column;
