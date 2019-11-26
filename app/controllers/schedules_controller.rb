@@ -4,6 +4,9 @@ class SchedulesController < ApplicationController
         @games = Game.all
         @gamesteam = GamesTeam.all
         @teams = Team.all
-        @team = 5
     end
+    
+    def show
+        render json 
+    end 
 end
