@@ -23,4 +23,6 @@ Rails.application.routes.draw do
   #User profile
   resources :users
   #get 'games_teams/index'
+  resources :schedules
+  get 'schedules/index'
 end
