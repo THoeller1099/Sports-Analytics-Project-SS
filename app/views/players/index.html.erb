@@ -55,34 +55,34 @@
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
+        <th data-sortable="true">First Name</th>
+        <th data-sortable="true"><%= link_to "Last Name", :sort => "last_name" %></th>
         <th class="no_width"></th>
-        <th class="pos">Position</th>
+        <th data-sortable="true" class="pos">Position</th>
         <th class="no_width"></th>
-        <th class="team">Team Name</th>
+        <th data-sortable="true" class="team">Team Name</th>
         <th class="no_width"></th>
-        <th class="points">Points</th>
+        <th data-sortable="true" class="points"><%= link_to "Points", :sort => "points" %></th>
         <th class="no_width"></th>
-        <th class="asst">Assists</th>
+        <th data-sortable="true" class="asst"><%= link_to "Assists", :sort => "assists" %></th>
         <th class="no_width"></th>
-        <th class="re">Rebounds</th>
+        <th data-sortable="true" class="re"><%= link_to "Rebounds", :sort => "rebounds" %></th>
         <th class="no_width"></th>
-        <th class="blk">Blocks</th>
+        <th data-sortable="true" class="blk"><%= link_to "Blocks", :sort => "blocks" %></th>
         <th class="no_width"></th>
-        <th class="stl">Steals</th>
+        <th data-sortable="true" class="stl"><%= link_to "Steals", :sort => "steals" %></th>
         <th class="no_width"></th>
-        <th class="twoa">TwoPtFgAtt</th>
+        <th data-sortable="true" class="twoa"><%= link_to "2PA", :sort => "twoPtFgAtt" %></th>
         <th class="no_width"></th>
-        <th class="twom">TwoPtFgMade</th>
+        <th data-sortable="true" class="twom"><%= link_to "2PM", :sort => "twoPtFgMade" %></th>
         <th class="no_width"></th>
-        <th class="tha">ThreePtFgAtt</th>
+        <th data-sortable="true" class="tha"><%= link_to "3PA", :sort => "threePtFgAtt" %></th>
         <th class="no_width"></th>
-        <th class="thm">ThreePtFgMade</th>
+        <th data-sortable="true" class="thm"><%= link_to "3PM", :sort => "threePtFgMade" %></th>
         <th class="no_width"></th>
-        <th class="fta">FreeThrowAtt</th>
+        <th data-sortable="true" class="fta"><%= link_to "FTA", :sort => "freeThrowAtt" %></th>
         <th class="no_width"></th>
-        <th class="ftm">FreeThrowMade</th>
+        <th data-sortable="true" class="ftm"><%= link_to "FTM", :sort => "freeThrowMade" %></th>
       </tr>
     </thead>
   
