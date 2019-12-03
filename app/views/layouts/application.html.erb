@@ -11,9 +11,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!--This is the code to add a logo icon to the tabs of our website. the photo is in /assets/images/favicon.ico-->
     <%= favicon_link_tag asset_path('favicon.ico') %>
+    
   </head>
 
-  <nav class="navbar navbar-expand-lg navbar-light " id="web-header">
+  <header class="navbar navbar-expand-lg navbar-light fixed-top" id="web-header">
     <a class="navbar-brand font-weight-bold" href="/" style="color: #727;">Home</a>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
@@ -25,7 +26,7 @@
         <a class="nav-item font-weight-bold" style="color #727;"><%= current_user %></a>
       </div>
     </div>
-  </nav>
+  </header>
 
   <body>
     <%= yield %>
