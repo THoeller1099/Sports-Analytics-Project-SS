@@ -17,10 +17,12 @@
       var lengthOfArray=arrayOfElements.length;
       for (var i=0; i<lengthOfArray;i++){
           arrayOfElements[i].style.display='block';
+          arrayOfElements[i].style.border='none';
       }
       iD.style.display='none';
     }
   </script>
+  <p class="button-ex-text">Please use the following buttons to hide statistics if the table is too wide for your screen or if you do not want to see that column.</p>
   <div class="buttons">
     <button class="pos btn button hide" type="button" onclick="hide('pos', posShow)">Hide Position</button>
     <button id="posShow" class="btn button" type="button" onclick="show('pos', posShow)" style="display: none">Show Position</button>
