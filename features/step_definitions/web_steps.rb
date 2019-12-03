@@ -31,6 +31,18 @@ module WithinHelpers
 end
 World(WithinHelpers)
 
+When("user clicks column header") do
+  click_link("Points")
+end
+
+Then("the column should be sorted") do
+  page.has_content?('James Harden')
+end
+
+Given("I am on home page") do
+  visit root_path
+end
+
 # Single-line step scoper
 When /^(.*) within (.*[^:])$/ do |step, parent|
   with_scope(parent) { When step }
@@ -39,10 +51,6 @@ end
 # Multi-line step scoper
 When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|
   with_scope(parent) { When "#{step}:", table_or_string }
-end
-
-Given /^(?:|I )am on (.+)$/ do |page_name|
-  visit path_to(page_name)
 end
 
 When /^(?:|I )go to (.+)$/ do |page_name|
