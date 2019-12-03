@@ -75,6 +75,28 @@
   margin: 10px;
  }
  
+ .buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+ }
+ 
+ .button {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #727;
+  margin: 2px;
+ }
+ 
+ .no_width {
+  width: 0;
+  max-width: 1;
+  margin: 0;
+  padding: 0;
+ }
+ 
  .table_container {
   margin-bottom: 10px;
   align-self: stretch;
@@ -87,10 +109,3 @@
   background-color: #EEE;
   color: #333;
  }
- 
-/* This may come in handy once the tables are in so I'm leaving it here for now
-.list {
- display: flex;
- flex-direction: row;
- align-items: stretch;
-}*/
