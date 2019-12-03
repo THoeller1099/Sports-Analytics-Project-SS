@@ -5,21 +5,29 @@
 <div class="table_container">
   <script>
     function hide(x) {
-      x.style.display='none'
+      var arrayOfElements=document.getElementsByClassName(x);
+      var lengthOfArray=arrayOfElements.length;
+      for (var i=0; i<lengthOfArray;i++){
+          arrayOfElements[i].style.display='none';
+      }
     }
     function show(x) {
-      x.style.display='inline'
+      var arrayOfElements=document.getElementsByClassName(x);
+      var lengthOfArray=arrayOfElements.length;
+      for (var i=0; i<lengthOfArray;i++){
+          arrayOfElements[i].style.display='inline';
+      }
     }
   </script>
-  <button class="pos" type="button" onclick="hide(pos)">Hide Position</button>
-  <button class="pos" type="button" onclick="show(pos)">Show Position</button>
+  <button type="button" onclick="hide('pos')">Hide Position</button>
+  <button type="button" onclick="show('pos')">Show Position</button>
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
         <th>Year</th>
         <th>First Name</th>
         <th>Last Name</th>
-        <th id="pos">Position</th>
+        <th class="pos">Position</th>
         <th>Team Name</th>
         <th>Points</th>
         <th>Assists</th>
@@ -41,7 +49,7 @@
           <td><%= player.year %></td>
           <td><%= link_to player.first_name, player %></td>
           <td><%= link_to player.last_name, player %></td>
-          <td><%= player.position %></td>
+          <td class="pos"><%= player.position %></td>
           <td><%= player.team_name %></td>
           <td><%= player.points %></td>
           <td><%= player.assists %></td>
