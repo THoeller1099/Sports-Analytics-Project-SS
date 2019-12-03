@@ -98,8 +98,8 @@
  }
  
  .no_width {
-  width: 0px;
-  margin: 0px;
+  max-width: 0px !important;
+  margin: 0px !important;
   padding: 0px !important;
   border: none;
   
