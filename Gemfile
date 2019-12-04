@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem 'bcrypt'
+gem 'orderly'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -65,6 +66,10 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
+  gem 'launchy'
 end
 
 group :production do

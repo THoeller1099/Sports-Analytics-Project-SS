@@ -11,20 +11,22 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!--This is the code to add a logo icon to the tabs of our website. the photo is in /assets/images/favicon.ico-->
     <%= favicon_link_tag asset_path('favicon.ico') %>
+    
   </head>
 
-  <nav class="navbar navbar-expand-lg navbar-light " id="web-header">
+  <header class="navbar navbar-expand-lg navbar-light fixed-top" id="web-header">
     <a class="navbar-brand font-weight-bold" href="/" style="color: #727;">Home</a>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-item nav-link font-weight-bold" href="/players" style="color: #727;">Players</a>
         <a class="nav-item nav-link font-weight-bold" href="/teams" style="color: #727;">Teams</a>
         <a class="nav-item nav-link font-weight-bold" href="/games" style="color: #727;">Games</a>
+        <a class="nav-item nav-link font-weight-bold" href="/schedules" style="color: #727;">Schedules</a>
         <a class="nav-item nav-link font-weight-bold" href="/auth/google_oauth2" style="color: #727;">Login with Google</a>
         <a class="nav-item font-weight-bold" style="color #727;"><%= current_user %></a>
       </div>
     </div>
-  </nav>
+  </header>
 
   <body>
     <%= yield %>
@@ -36,7 +38,7 @@
         <a href="/games">Games</a>
         <a href="https://github.com/THoeller1099/Sports-Analytics-Project-SS">GitHub</a>
       </div>
-      <img id="zion" src="https://raw.githubusercontent.com/THoeller1099/Sports-Analytics-Projcet-SS/master/app/assets/images/zion.jpg?token=AKZTYCJ6RACBQPGHNAZBTZS5UUKXE" alt="Zion Williamson">
+      <img id="zion" src="https://github.com/THoeller1099/Sports-Analytics-Project-SS/blob/master/app/assets/images/thePhoto.jpg?raw=true" alt="The Boys">
     </footer>
   </body>
 </html>

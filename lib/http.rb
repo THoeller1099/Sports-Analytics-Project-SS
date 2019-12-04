@@ -2,8 +2,9 @@ require 'httparty'
 
 class Http
   API_URL = 'https://www.balldontlie.io/api/v1/stats'
-  API_players = 'https://balldontlie.io/api/v1/players'
-
+  API_players = 'https://api.mysportsfeeds.com/v2.1/pull/nba/players.json?season=current'
+  Auth = {:username => '07d88158-76c4-4eee-a408-0a898c', :password => 'MYSPORTSFEEDS'}
+  
   def unique_url
     response = HTTParty.get(API_URL)
     # TODO more error checking (500 error, etc)
@@ -13,18 +14,18 @@ class Http
   end
   def get_all
     #response = HTTParty.get(API_URL + '?seasons[]=2019&per_page=100&postseason=false')
-    response = HTTParty.get(API_players + '?per_page=100')
-    tot_pages = response.parsed_response["meta"]["total_pages"]
-    puts tot_pages
-    for num in 1..tot_pages do
-      response = HTTParty.get(API_players + "?per_page=100&page=#{num}")
-      data = response.parsed_response["data"]
-      data.each do |player|
-        puts player["first_name"]
-        puts player["last_name"]
-        puts player["id"]
-      end
+    
+    auth = {:username => '07d88158-76c4-4eee-a408-0a898c', :password => 'MYSPORTSFEEDS'}
+
+    response = HTTParty.get(API_players, :basic_auth => Auth)
+    
+    
+    players = response.parsed_response["players"]
+  
+    players.each do |player|
+      puts player["player"]["lastName"]
+      #puts player["player.lastName"]
+      #puts player["id"]
     end
-    #puts response.body
   end
 end
