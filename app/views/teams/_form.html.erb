@@ -38,7 +38,17 @@
   
   <div class="field">
     <%= form.label :wins %>
+    <%= form.number_field :wins %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :losses %>
     <%= form.number_field :losses %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :division %>
+    <%= form.text_field :division %>
   </div>
 
 

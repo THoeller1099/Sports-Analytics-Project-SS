@@ -13,8 +13,15 @@ require('daru')
 api = Http.new()
 api.get_all_teams
 teamStats = api.get_all_teams
+divisions = {"BOS"=>"Atlantic", "BRO"=>"Atlantic", "TOR"=>"Atlantic", "PHI"=>"Atlantic", "NYK"=>"Atlantic",
+  "MIL"=>"Central", "IND"=>"Central", "DET"=>"Central", "CHI"=>"Central", "CLE"=>"Central",
+  "MIA"=>"Southeast", "ORL"=>"Southeast", "CHA"=>"Southeast", "WAS"=>"Southeast", "ATL"=>"Southeast",
+  "DEN"=>"Northwest", "UTA"=>"Northwest", "MIN"=>"Northwest", "OKL"=>"Northwest", "POR"=>"Northwest",
+  "LAC"=>"Pacific", "LAL"=>"Pacific", "PHX"=>"Pacific", "SAC"=>"Pacific", "GSW"=>"Pacific",
+  "DAL"=>"Southwest", "HOU"=>"Southwest", "SAS"=>"Southwest", "MEM"=>"Southwest", "NOP"=>"Southwest",
+  }
   teamStats.each do |stats|
-  	team_2019 = {year:"2019-2020", location: "", name: "", abbr: "", games_played: "", wins:0, losses:0}
+  	team_2019 = {year:"2019-2020", location: "", name: "", abbr: "", games_played: "", wins:0, losses:0, division:""}
   	team = stats["team"]
   	team_2019[:location] = team["city"]
   	team_2019[:name] = team["name"]
@@ -24,6 +31,7 @@ teamStats = api.get_all_teams
   	standings = statistics["standings"]
   	team_2019[:wins] = standings["wins"]
   	team_2019[:losses] = standings["losses"]
+  	team_2019[:division] = divisions[team["abbreviation"]]
   	Team.create([team_2019])
   	#puts team_2019
   end

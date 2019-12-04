@@ -75,6 +75,43 @@
   margin: 10px;
  }
  
+ .buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+ }
+ 
+ .button-ex-text {
+  font-size: 18px;
+  color: #404;
+  
+ }
+ 
+ .button {
+  margin: 2px;
+  background-color: #848;
+  color: #FFF;
+ }
+ 
+ .hide {
+  background-color: #FFF;
+  color: #515;
+ }
+ 
+ .no_width {
+  max-width: 0px !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  border: none;
+  
+  
+  th,
+  td {
+    padding: 0px;
+  }
+ }
+ 
  .table_container {
   margin-bottom: 10px;
   align-self: stretch;
@@ -87,10 +124,3 @@
   background-color: #EEE;
   color: #333;
  }
- 
-/* This may come in handy once the tables are in so I'm leaving it here for now
-.list {
- display: flex;
- flex-direction: row;
- align-items: stretch;
-}*/
