@@ -10,7 +10,9 @@
   <strong><%= @player.first_name %> <%= @player.last_name %></strong>
 </p>
 <p>
-  <%= image_tag @player.image, :alt => 'player image' %>
+  <% if @player.image %>
+    <%= image_tag @player.image, :alt => 'player image' %>
+  <% end%>
 </p>
 
 <!--<p>-->
