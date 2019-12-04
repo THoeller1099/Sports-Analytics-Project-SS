@@ -4,7 +4,7 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
   def index
-    @players = Player.where(year:"2018-2019").order(params[:sort]).reverse
+    @players = Player.where(year:"2019-2020").order(params[:sort]).reverse
   end
 
   # GET /players/1
