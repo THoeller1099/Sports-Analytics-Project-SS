@@ -2,6 +2,9 @@
 
 <h1>Teams</h1>
 
+<%= will_paginate @teams, previous_label: h("<"), next_label: h(">") %>
+
+
 <div class="table_container">
   <%= link_to 'New Team', new_team_path %>
   <table class="table table-striped table-bordered table-hover">

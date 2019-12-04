@@ -36,6 +36,8 @@ gem 'orderly'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# add will_paginate gem
+gem 'will_paginate', '> 3.0'
 # REST client for api calls
 gem 'rest-client', '~> 1.8'
 # JSON parser
