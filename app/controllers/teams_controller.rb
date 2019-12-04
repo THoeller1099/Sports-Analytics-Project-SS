@@ -5,7 +5,7 @@ class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.json
   def index
-    @teams = Team.paginate(:page => params[:page], :per_page => 30)
+    @teams = Team.paginate(:page => params[:page], :per_page => 10)
     @players = Player.all
   end
 
