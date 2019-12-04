@@ -6,7 +6,7 @@
 <h3> Select Team to View Schedule </h3>
 
 <ul id="team_choices">
-  <% @teams.where(year: "2018-2019").each do |tmli| %>
+  <% @teams.each do |tmli| %>
     <% lnk = "#" + tmli.name %>
     <li><a href=<%= lnk %>><%= tmli.location + " " + tmli.name %></a></li>
   <% end %>
@@ -72,7 +72,9 @@
             <% else %>
               <td><%= "@" + game.home %></td>
             <% end %>
-            <% if (game.home_score > game.away_score) %>
+            <% if (game.home_score == nil) %>
+              <td><%= "---" %></td>
+            <% elsif (game.home_score > game.away_score) %>
               <td><%= "W " + game.home_score.to_s + "-" + game.away_score.to_s %></td>
             <% elsif (game.home_score < game.away_score) %>
               <td><%= "L " + game.home_score.to_s + "-" + game.away_score.to_s %></td>
