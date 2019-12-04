@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_12_04_154650) do
     t.float "freeThrowMade"
     t.float "threePtFgAtt"
     t.float "threePtFgMade"
+    t.string "image"
   end
 
   create_table "teams", force: :cascade do |t|

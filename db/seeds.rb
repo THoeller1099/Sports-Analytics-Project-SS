@@ -46,6 +46,7 @@ these_players.each do |player|
 	player_2019[:last_name] = player_data["lastName"]
 	player_2019[:position] = player_data["primaryPosition"]
 	player_2019[:team_name] = team_data["abbreviation"]
+	player_2019[:image] = player_data["officialImageSrc"]
 	player_2019[:points] = stats_data["offense"]["ptsPerGame"]
 	player_2019[:assists] = stats_data["offense"]["astPerGame"]
 	player_2019[:rebounds] = stats_data["rebounds"]["rebPerGame"]

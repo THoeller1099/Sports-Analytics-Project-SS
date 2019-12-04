@@ -6,14 +6,19 @@
 </p>
 
 <p>
-  <strong>First Name:</strong>
-  <%= @player.first_name %>
+  <!--<strong>First Name:</strong>-->
+  <strong><%= @player.first_name %> <%= @player.last_name %></strong>
+</p>
+<p>
+  <% if @player.image %>
+    <%= image_tag @player.image, :alt => 'player image' %>
+  <% end%>
 </p>
 
-<p>
-  <strong>Last Name:</strong>
-  <%= @player.last_name %>
-</p>
+<!--<p>-->
+<!--  <strong>Last Name:</strong>-->
+<!--  <%= @player.last_name %>-->
+<!--</p>-->
 
 <p>
   <strong>Position:</strong>
