@@ -38,6 +38,13 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 # add will_paginate gem
 gem 'will_paginate', '> 3.0'
+# REST client for api calls
+gem 'rest-client', '~> 1.8'
+# JSON parser
+gem 'json', '~> 1.8', '>= 1.8.3'
+# another rest client
+gem 'httparty', '~> 0.13.7'
+
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

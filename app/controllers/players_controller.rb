@@ -4,7 +4,7 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
   def index
-    @players = Player.where(year:"2018-2019").paginate(:page => params[:page], :per_page => 25).order(params[:sort]).reverse_order
+    @players = Player.paginate(:page => params[:page], :per_page => 25).order(params[:sort]).reverse_order
   end
 
   # GET /players/1
