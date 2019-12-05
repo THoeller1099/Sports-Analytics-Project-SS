@@ -7,6 +7,6 @@ class SchedulesController < ApplicationController
     end
     
     def show
-        render json 
+        render json
     end 
 end
