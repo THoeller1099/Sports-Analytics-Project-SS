@@ -1,101 +1,99 @@
 <p id="notice"><%= notice %></p>
 <br><br>
-<p>
-  <strong>Year:</strong>
-  <%= @player.year %>
-</p>
+<div class="player_container">
+  <div class="player_info_container">
+    <div class="vert-align">
+      <h3>
+        <!--<strong>First Name:</strong>-->
+        <strong><%= @player.first_name %> <%= @player.last_name %></strong>
+      </h3>
+      <p>
+        <% if @player.image %>
+          <%= image_tag @player.image, :alt => 'player image' %>
+        <% end%>
+      </p>
+    </div>
+    
+    <!--<p>-->
+    <!--  <strong>Last Name:</strong>-->
+    <!--  <%= @player.last_name %>-->
+    <!--</p>-->
+    
+    <div class="player_info">
+      <p>
+        <strong>Year:</strong>
+        <%= @player.year %>
+      </p>
+      
+      <p>
+        <strong>Position:</strong>
+        <%= @player.position %>
+      </p>
+      
+      <p>
+        <strong>Team Name:</strong>
+        <%= @player.team_name %>
+      </p>
+    </div>
+  </div>
+  <p>
+    <strong>Points:</strong>
+    <%= @player.points %>
+  </p>
+  
+  <p>
+    <strong>Assists:</strong>
+    <%= @player.assists %>
+  </p>
+  
+  <p>
+    <strong>Rebounds:</strong>
+    <%= @player.rebounds %>
+  </p>
+  
+  <p>
+    <strong>Blocks:</strong>
+    <%= @player.blocks %>
+  </p>
+  
+  <p>
+    <strong>Steals:</strong>
+    <%= @player.steals %>
+  </p>
+  
+  <p>
+    <strong>TwoPtFgAtt:</strong>
+    <%= @player.twoPtFgAtt %>
+  </p>
+  
+  <p>
+    <strong>TwoPtFgMade:</strong>
+    <%= @player.twoPtFgMade %>
+  </p>
+  
+  <p>
+    <strong>ThreePtFgAtt:</strong>
+    <%= @player.threePtFgAtt%>
+  </p>
+  
+  <p>
+    <strong>ThreePtFgMade:</strong>
+    <%= @player.threePtFgMade %>
+  </p>
+  
+  <p>
+    <strong>FreeThrowAtt:</strong>
+    <%= @player.freeThrowAtt %>
+  </p>
+  
+  <p>
+    <strong>FreeThrowMade:</strong>
+    <%= @player.freeThrowMade %>
+  </p>
+  
+  <div id="watchlist_link">
+  <%= link_to 'Add to Watchlist', :controller => :players, :action => :show %>
+  </div>
 
-<p>
-  <!--<strong>First Name:</strong>-->
-  <strong><%= @player.first_name %> <%= @player.last_name %></strong>
-</p>
-<p>
-  <% if @player.image %>
-    <%= image_tag @player.image, :alt => 'player image' %>
-  <% end%>
-</p>
-
-<!--<p>-->
-<!--  <strong>Last Name:</strong>-->
-<!--  <%= @player.last_name %>-->
-<!--</p>-->
-
-<p>
-  <strong>Position:</strong>
-  <%= @player.position %>
-</p>
-
-<p>
-  <strong>Team Name:</strong>
-  <%= @player.team_name %>
-</p>
-
-<p>
-  <strong>Points:</strong>
-  <%= @player.points %>
-</p>
-
-<p>
-  <strong>Assists:</strong>
-  <%= @player.assists %>
-</p>
-
-<p>
-  <strong>Rebounds:</strong>
-  <%= @player.rebounds %>
-</p>
-
-<p>
-  <strong>Blocks:</strong>
-  <%= @player.blocks %>
-</p>
-
-<p>
-  <strong>Steals:</strong>
-  <%= @player.steals %>
-</p>
-
-<p>
-  <strong>TwoPtFgAtt:</strong>
-  <%= @player.twoPtFgAtt %>
-</p>
-
-<p>
-  <strong>TwoPtFgMade:</strong>
-  <%= @player.twoPtFgMade %>
-</p>
-
-<p>
-  <strong>ThreePtFgAtt:</strong>
-  <%= @player.threePtFgAtt%>
-</p>
-
-<p>
-  <strong>ThreePtFgMade:</strong>
-  <%= @player.threePtFgMade %>
-</p>
-
-<p>
-  <strong>FreeThrowAtt:</strong>
-  <%= @player.freeThrowAtt %>
-</p>
-
-<p>
-  <strong>FreeThrowMade:</strong>
-  <%= @player.freeThrowMade %>
-</p>
-
-<p>
-  <strong>Team Id:</strong>
-  <%= @player.team_id %>
-</p>
-
-<p>
-  <strong>Users:</strong>
-  <%= @player.user_id %>
-</p>
-<div id="watchlist_link">
-<%= link_to 'Add to Watchlist', :controller => :players, :action => :show %>
 </div>
-
 <%= link_to 'Back', players_path %>

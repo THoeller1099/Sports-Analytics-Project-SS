@@ -2,10 +2,46 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 #watchlist_link {
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
     text-decoration: none;
     color: initial;
+    padding: 2px;
+}
+
+.player_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    align-self: stretch;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #888;
+    padding: 10px;
+    background-color: #EEE;
+    color: #333;
+}
+
+.player_info_container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.player_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.vert-align {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
