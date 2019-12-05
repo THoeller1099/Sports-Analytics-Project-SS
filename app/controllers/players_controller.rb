@@ -10,6 +10,8 @@ class PlayersController < ApplicationController
   # GET /players/1
   # GET /players/1.json
   def show
+    @player.user_id = 1
+    @player.save
   end
 
   # GET /players/new
