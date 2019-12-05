@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
+
 <br><br>
 <h1>Welcome! View NBA stats below</h1>
 <br><br>
+
 <%= will_paginate @players, previous_label: h("<"), next_label: h(">") %>
 <br>
 
@@ -67,27 +69,27 @@
                 <th class="no_width"></th>
                 <th class="team" data-sortable="true">Team Name</th>
                 <th class="no_width"></th>
-                <th class="points" data-sortable="true"><%= link_to "Points", :sort => "points" %></th>
+                <th class="points" data-sortable="true" title="points per game"><%= link_to "Points", :sort => "points" %></th>
                 <th class="no_width"></th>
-                <th class="asst"data-sortable="true"><%= link_to "Assists", :sort => "assists" %></th>
+                <th class="asst"data-sortable="true" title="assists per game"><%= link_to "Assists", :sort => "assists" %></th>
                 <th class="no_width"></th>
-                <th class="re" data-sortable="true"><%= link_to "Rebounds", :sort => "rebounds" %></th>
+                <th class="re" data-sortable="true" title="rebounds per game"><%= link_to "Rebounds", :sort => "rebounds" %></th>
                 <th class="no_width"></th>
-                <th class="blk" data-sortable="true"><%= link_to "Blocks", :sort => "blocks" %></th>
+                <th class="blk" data-sortable="true" title="blocks per game"><%= link_to "Blocks", :sort => "blocks" %></th>
                 <th class="no_width"></th>
-                <th class="stl" data-sortable="true"><%= link_to "Steals", :sort => "steals" %></th>
+                <th class="stl" data-sortable="true" title="steals per game"><%= link_to "Steals", :sort => "steals" %></th>
                 <th class="no_width"></th>
-                <th class="twoa" data-sortable="true"><%= link_to "2PA", :sort => "twoPtFgAtt" %></th>
+                <th class="twoa" data-sortable="true" title="two point field goal attempts per game"><%= link_to "2PA", :sort => "twoPtFgAtt" %></th>
                 <th class="no_width"></th>
-                <th class="twom" data-sortable="true"><%= link_to "2PM", :sort => "twoPtFgMade" %></th>
+                <th class="twom" data-sortable="true" title="two point field goals made per game"><%= link_to "2PM", :sort => "twoPtFgMade" %></th>
                 <th class="no_width"></th>
-                <th class="tha" data-sortable="true"><%= link_to "3PA", :sort => "threePtFgAtt" %></th>
+                <th class="tha" data-sortable="true" title="three point field goal attempts per game"><%= link_to "3PA", :sort => "threePtFgAtt" %></th>
                 <th class="no_width"></th>
-                <th class="thm" data-sortable="true"><%= link_to "3PM", :sort => "threePtFgMade" %></th>
+                <th class="thm" data-sortable="true" title="three point field goals made per game"><%= link_to "3PM", :sort => "threePtFgMade" %></th>
                 <th class="no_width"></th>
-                <th class="fta" data-sortable="true"><%= link_to "FTA", :sort => "freeThrowAtt" %></th>
+                <th class="fta" data-sortable="true" title="free throw attempts per game"><%= link_to "FTA", :sort => "freeThrowAtt" %></th>
                 <th class="no_width"></th>
-                <th class="ftm" data-sortable="true"><%= link_to "FTM", :sort => "freeThrowMade" %></th>
+                <th class="ftm" data-sortable="true" title="free throws made per game"><%= link_to "FTM", :sort => "freeThrowMade" %></th>
             </tr>
         </thead>
         
