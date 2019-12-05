@@ -90,4 +90,12 @@
   <%= @player.team_id %>
 </p>
 
+<p>
+  <strong>Users:</strong>
+  <%= @player.user_id %>
+</p>
+<div id="watchlist_link">
+<%= link_to 'Add to Watchlist', :controller => :players, :action => :show %>
+</div>
+
 <%= link_to 'Back', players_path %>
