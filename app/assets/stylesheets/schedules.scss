@@ -2,8 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#team_choices {
-    display: inline-block;
-    white-space: nowrap;
-    overflow-x: auto;
+.team_choices {
+    text-align: center;
+}
+
+
+.team_button{
+    
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
 }

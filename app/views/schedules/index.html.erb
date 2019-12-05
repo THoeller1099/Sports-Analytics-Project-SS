@@ -4,27 +4,83 @@
 <h1 id="top_title"> Schedules </h1>
 <br><br>
 <h3> Select Team to View Schedule </h3>
+<br>
+<br>
+<h5> Atlantic </h5>
+<br>
+<div class="team_choices">
+    <% @teams.where(division:"Atlantic").each do |tmli| %>
+      <% lnk = "#" + tmli.name %>
+      <a class="team_button", href=<%= lnk %>><%= "- " + tmli.location + " " + tmli.name + " -" %></a>
+    <% end %>
+</div>
+<br>
 
-<ul id="team_choices">
-  <% @teams.each do |tmli| %>
-    <% lnk = "#" + tmli.name %>
-    <li><a href=<%= lnk %>><%= tmli.location + " " + tmli.name %></a></li>
-  <% end %>
-</ul>
+<h5> Central </h5>
+<br>
+<div class="team_choices">
+    <% @teams.where(division:"Central").each do |tmli| %>
+      <% lnk = "#" + tmli.name %>
+      <a class="team_button", href=<%= lnk %>><%= "- " + tmli.location + " " + tmli.name + " -" %></a>
+    <% end %>
+</div>
+<br>
+
+<h5> Southeast </h5>
+<br>
+<div class="team_choices">
+    <% @teams.where(division:"Southeast").each do |tmli| %>
+      <% lnk = "#" + tmli.name %>
+      <a class="team_button", href=<%= lnk %>><%= "- " + tmli.location + " " + tmli.name + " -" %></a>
+    <% end %>
+</div>
+<br>
+
+<h5> Northwest </h5>
+<br>
+<div class="team_choices">
+    <% @teams.where(division:"Northwest").each do |tmli| %>
+      <% lnk = "#" + tmli.name %>
+      <a class="team_button", href=<%= lnk %>><%= "- " + tmli.location + " " + tmli.name + " -" %></a>
+    <% end %>
+</div>
+<br>
+
+<h5> Pacific </h5>
+<br>
+<div class="team_choices">
+    <% @teams.where(division:"Pacific").each do |tmli| %>
+      <% lnk = "#" + tmli.name %>
+      <a class="team_button", href=<%= lnk %>><%= "- " + tmli.location + " " + tmli.name + " -" %></a>
+    <% end %>
+</div>
+<br>
+
+<h5> Southwest </h5>
+<br>
+<div class="team_choices">
+    <% @teams.where(division:"Southwest").each do |tmli| %>
+      <% lnk = "#" + tmli.name %>
+      <a class="team_button", href=<%= lnk %>><%= "- " + tmli.location + " " + tmli.name + " -" %></a>
+    <% end %>
+</div>
+<br>
 
 
 
-<% for num in 1..5 do %>
+<% @division_teams = @teams.where(division: "Atlantic")%>
+<br>
+<% @division_teams.each do |div_team| %>
   <br>
-  <% @team = num %>
-  <% numstr = num.to_s %>
+  <% @team = div_team.id %>
+  <% numstr = @team.to_s %>
   <% class_id = "team" + numstr %>
   <% tm_id = @team  %>
   <% tm = @teams.find_by(id: tm_id) %>
   <br><br>
   <h2 id=<%= tm.name %>><%= tm.location + " " + tm.name + " Schedule" %></h2>
   <br><br>
-  <a href="#top_title">Back To Top</a>
+  <a class="team_button", href="#top_title">- Back -</a>
   <br><br>
   <div class="table_container">
     <table class="table table-striped table-bordered table-hover">
