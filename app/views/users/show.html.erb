@@ -1,22 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <br>
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-<!--
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
--->
-<p>
-  <strong>Watchlist:</strong>
-</p>
-<div style="text-align:center">
-  <% @players.each do |player| %>
-    <%= player.first_name + " " + player.last_name %><br>
-  <% end %>
+<div class="table_container">
+  <p>
+    <strong>Name:</strong>
+    <%= @user.name %>
+  </p>
+  <!--
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+  -->
+  <p>
+    <strong>Watchlist:</strong>
+  </p>
+  <div>
+    <% @players.each do |player| %>
+      <%= player.first_name + " " + player.last_name %><br>
+    <% end %>
+  </div>
 </div>
 <br>
