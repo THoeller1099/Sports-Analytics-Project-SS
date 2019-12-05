@@ -8,4 +8,20 @@ module SessionsHelper
             @current_user ||= User.find_by(id: session[:user_id])
         end
     end
+    
+    def user_display
+        if current_user
+            return current_user.name
+        else
+            return nil
+        end
+    end
+    
+    def user_id_display
+        if current_user
+            return current_user.id
+        else
+            return nil
+        end
+    end
 end
