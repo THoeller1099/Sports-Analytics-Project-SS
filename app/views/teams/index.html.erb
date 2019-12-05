@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
-
+<br><br>
 <h1>Teams</h1>
 
+<br><br>
 <%= will_paginate @teams, previous_label: h("<"), next_label: h(">") %>
-
+<br>
 
 <div class="table_container">
   <%= link_to 'New Team', new_team_path %>
@@ -39,3 +40,6 @@
   <br>
   <%= link_to 'New Team', new_team_path %>
 </div>
+
+<%= will_paginate @teams, previous_label: h("<"), next_label: h(">") %>
+<br><br>

@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
-
+<br><br>
 <h1>Welcome! View NBA stats below</h1>
-
-
+<br><br>
 <%= will_paginate @players, previous_label: h("<"), next_label: h(">") %>
+<br>
 
 <div class="table_container">
     <h2><%= link_to 'Players', players_path %></h2>
@@ -128,9 +128,13 @@
     </table>
 </div>
 
+<%= will_paginate @players, previous_label: h("<"), next_label: h(">") %>
+
 <hr class="separator">
+<br><br>
 
 <%= will_paginate @teams, previous_label: h("<"), next_label: h(">") %>
+<br>
 
 <div class="table_container">
     <h2>Teams</h2>
@@ -156,5 +160,6 @@
         
     </table>
 </div>
-
+<%= will_paginate @teams, previous_label: h("<"), next_label: h(">") %>
+<br><br>
 
