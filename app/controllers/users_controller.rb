@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @players = Player.where(user_id:1)
   end
 
   # GET /users/new
