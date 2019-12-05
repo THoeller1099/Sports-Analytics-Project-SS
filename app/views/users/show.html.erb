@@ -1,15 +1,16 @@
 <p id="notice"><%= notice %></p>
 
+<br>
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
-
+<!--
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
-
+-->
 <p>
   <strong>Watchlist:</strong>
 </p>
@@ -18,6 +19,4 @@
     <%= player.first_name + " " + player.last_name %><br>
   <% end %>
 </div>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<br>
