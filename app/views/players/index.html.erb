@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<br><br>
 <h1>Players</h1>
+<br><br>
 
 <%= will_paginate @players, previous_label: h("<"), next_label: h(">") %>
 
+<br>
 <div class="table_container">
   <script>
     function hide(cl, iD) {
@@ -124,5 +127,8 @@
     </tbody>
   </table>
 </div>
-<br>
+<%= will_paginate @players, previous_label: h("<"), next_label: h(">") %>
+<br><br>
+
+
 
