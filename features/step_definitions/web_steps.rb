@@ -39,6 +39,15 @@ Then("the column should be sorted") do
   page.has_content?('James Harden')
 end
 
+When("user clicks hide position") do
+  click_button("Hide Position")
+end
+
+Then("the position column should be gone") do
+  page.has_no_content?('Position')
+end
+
+
 Given("I am on home page") do
   visit root_path
 end
