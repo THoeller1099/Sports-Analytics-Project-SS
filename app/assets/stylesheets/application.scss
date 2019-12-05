@@ -25,6 +25,25 @@
   color: #EEE;
  }
  
+ .navheader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: -5px;
+ }
+ 
+ .alignLeft {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+ }
+ 
+ .alignRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+ }
+ 
  .footer-list {
   display: flex;
   align-self: stretch;
@@ -128,6 +147,7 @@
 .pagination {
   background: white;
   cursor: default;
+  padding: 1px;
   a, span, em {
     padding: 0.2em 0.5em;
     display: block;
