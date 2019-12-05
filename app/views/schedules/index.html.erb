@@ -3,66 +3,68 @@
 <br><br>
 <h1 id="top_title"> Schedules </h1>
 <br><br>
-<h3> Select Team to View Schedule </h3>
-<br>
-<br>
-<h5> Atlantic </h5>
-<br>
-<div class="team_choices">
-    <% @teams.where(division:"Atlantic").each do |tmli| %>
-      <% lnk = "#" + tmli.name %>
-      <a class="team_button", href=<%= lnk %>><%= "- " + tmli.location + " " + tmli.name + " -" %></a>
-    <% end %>
-</div>
-<br>
-
-<h5> Central </h5>
-<br>
-<div class="team_choices">
-    <% @teams.where(division:"Central").each do |tmli| %>
-      <% lnk = "#" + tmli.name %>
-      <a class="team_button", href=<%= lnk %>><%= "- " + tmli.location + " " + tmli.name + " -" %></a>
-    <% end %>
-</div>
-<br>
-
-<h5> Southeast </h5>
-<br>
-<div class="team_choices">
-    <% @teams.where(division:"Southeast").each do |tmli| %>
-      <% lnk = "#" + tmli.name %>
-      <a class="team_button", href=<%= lnk %>><%= "- " + tmli.location + " " + tmli.name + " -" %></a>
-    <% end %>
-</div>
-<br>
-
-<h5> Northwest </h5>
-<br>
-<div class="team_choices">
-    <% @teams.where(division:"Northwest").each do |tmli| %>
-      <% lnk = "#" + tmli.name %>
-      <a class="team_button", href=<%= lnk %>><%= "- " + tmli.location + " " + tmli.name + " -" %></a>
-    <% end %>
-</div>
-<br>
-
-<h5> Pacific </h5>
-<br>
-<div class="team_choices">
-    <% @teams.where(division:"Pacific").each do |tmli| %>
-      <% lnk = "#" + tmli.name %>
-      <a class="team_button", href=<%= lnk %>><%= "- " + tmli.location + " " + tmli.name + " -" %></a>
-    <% end %>
-</div>
-<br>
-
-<h5> Southwest </h5>
-<br>
-<div class="team_choices">
-    <% @teams.where(division:"Southwest").each do |tmli| %>
-      <% lnk = "#" + tmli.name %>
-      <a class="team_button", href=<%= lnk %>><%= "- " + tmli.location + " " + tmli.name + " -" %></a>
-    <% end %>
+<div class="divisions_container">
+  <h3> Select Team to View Schedule </h3>
+  <br>
+  <br>
+  <h5> Atlantic </h5>
+  <br>
+  <div class="team_choices">
+      <% @teams.where(division:"Atlantic").each do |tmli| %>
+        <% lnk = "#" + tmli.name %>
+        <a class="team_button", href=<%= lnk %>><%= "- " + tmli.location + " " + tmli.name + " -" %></a>
+      <% end %>
+  </div>
+  <br>
+  
+  <h5> Central </h5>
+  <br>
+  <div class="team_choices">
+      <% @teams.where(division:"Central").each do |tmli| %>
+        <% lnk = "#" + tmli.name %>
+        <a class="team_button", href=<%= lnk %>><%= "- " + tmli.location + " " + tmli.name + " -" %></a>
+      <% end %>
+  </div>
+  <br>
+  
+  <h5> Southeast </h5>
+  <br>
+  <div class="team_choices">
+      <% @teams.where(division:"Southeast").each do |tmli| %>
+        <% lnk = "#" + tmli.name %>
+        <a class="team_button", href=<%= lnk %>><%= "- " + tmli.location + " " + tmli.name + " -" %></a>
+      <% end %>
+  </div>
+  <br>
+  
+  <h5> Northwest </h5>
+  <br>
+  <div class="team_choices">
+      <% @teams.where(division:"Northwest").each do |tmli| %>
+        <% lnk = "#" + tmli.name %>
+        <a class="team_button", href=<%= lnk %>><%= "- " + tmli.location + " " + tmli.name + " -" %></a>
+      <% end %>
+  </div>
+  <br>
+  
+  <h5> Pacific </h5>
+  <br>
+  <div class="team_choices">
+      <% @teams.where(division:"Pacific").each do |tmli| %>
+        <% lnk = "#" + tmli.name %>
+        <a class="team_button", href=<%= lnk %>><%= "- " + tmli.location + " " + tmli.name + " -" %></a>
+      <% end %>
+  </div>
+  <br>
+  
+  <h5> Southwest </h5>
+  <br>
+  <div class="team_choices">
+      <% @teams.where(division:"Southwest").each do |tmli| %>
+        <% lnk = "#" + tmli.name %>
+        <a class="team_button", href=<%= lnk %>><%= "- " + tmli.location + " " + tmli.name + " -" %></a>
+      <% end %>
+  </div>
 </div>
 <br>
 
