@@ -22,9 +22,36 @@
       <% @games.each do |game| %>
         <tr>
           <td><%= game.date %></td>
-          <td><%= game.time %></td>
-          <td><%= game.home %></td>
-          <td><%= game.away %></td>
+          <% old_time = game.time %>
+          <% hour = old_time[0,2].to_i %>
+          <% minutes = old_time[3,2].to_i %>
+          <% if (hour > 5) %>
+            <% hour = hour - 5 %>
+          <% else %>
+            <% hour = hour - 5 + 24 %>
+          <% end %>
+          <% if (hour >= 12) %>
+          	<% tod = "PM" %>
+          <% else %>
+          	<% tod = "AM" %>
+          <% end %>
+          <% new_hour = hour % 12 %>
+          <% if (new_hour == 0) %>
+  	         <% new_hour = 12 %>
+          <% end %>
+          <% if (minutes < 10) %>
+             <% new_minutes = "0" + minutes.to_s %>
+          <% else %>
+             <% new_minutes = minutes.to_s %>
+          <% end %>
+          <% time = new_hour.to_s + ":" + new_minutes + " " + tod + " ET" %>
+          <td><%= time %></td>
+          <% home_abbr = game.home %>
+          <% home_tm = Team.find_by(abbr: home_abbr) %>
+          <td><%= home_tm.location + " " + home_tm.name %></td>
+          <% away_abbr = game.away %>
+          <% away_tm = Team.find_by(abbr: away_abbr) %>
+          <td><%= away_tm.location + " " + away_tm.name %></td>
           <td><%= game.home_score %></td>
           <td><%= game.away_score %></td>
         </tr>
