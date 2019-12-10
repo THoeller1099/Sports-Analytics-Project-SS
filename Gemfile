@@ -46,6 +46,7 @@ gem 'json', '~> 1.8', '>= 1.8.3'
 gem 'httparty', '~> 0.13.7'
 # for svg web icons
 gem 'octicons'
+gem 'octicons_helper'
 
 
 group :development, :test do
