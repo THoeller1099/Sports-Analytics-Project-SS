@@ -96,9 +96,9 @@
  
  .buttons {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   margin-bottom: 10px;
+  align-items: flex-start;
  }
  
  .button-ex-text {
@@ -107,13 +107,21 @@
   
  }
  
- .button {
+ .big-button {
   margin: 2px;
   background-color: #FFF;
   color: #515;
  }
  
+ .button {
+  margin: 1px;
+  font-size: 12px;
+  background-color: #FFF;
+  color: #515;
+ }
+ 
  .hide {
+  font-size: 12px;
   background-color: #848;
   color: #FFF;
  }
