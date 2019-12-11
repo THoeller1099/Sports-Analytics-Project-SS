@@ -40,8 +40,11 @@
         iD.style.display='none';
       }
     }
+    require 'octicons'
+    icon = Octicons::Octicon.new("chevron-right")
+    icon.to_svg
   </script>
-  <button id='butExpand' class=" btn big-button" onclick="show('', butList)" type='button'>[+] Click to toggle columns</button>
+  <%= octicon "chevron-right" %><button id='butExpand' class=" btn big-button" onclick="show('', butList)" type='button'>[+] Click to toggle columns</button>
   <div class="buttons", id='butList' style='display: none'>
     <button class=" btn big-button" onclick="hide('', butList)" type='button'>[-] Click to hide column buttons</button>
     <button class="pos btn button hide" type="button" onclick="hide('pos', posShow)">Position</button>
