@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     # ActiveRecord::Migration
     has_secure_password
+    validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
     def change
        add_column :users, google_token, :string
        add_column :users, google_refresh_token, :string
