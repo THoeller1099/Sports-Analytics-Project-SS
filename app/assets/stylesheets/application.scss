@@ -30,15 +30,18 @@
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: -5px;
+  align-items: center;
  }
  
  .alignLeft {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  margin-bottom: -5px;
  }
  
  .alignRight {
+  margin-bottom: 2px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
