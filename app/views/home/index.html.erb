@@ -10,127 +10,140 @@
 
 <div class="table_container">
     <h2><%= link_to 'Players', players_path %></h2>
-    <div>
-    </div>
-    <script>
+  <script>
     function hide(cl, iD) {
-      var arrayOfElements=document.getElementsByClassName(cl);
-      var lengthOfArray=arrayOfElements.length;
-      for (var i=0; i<lengthOfArray;i++){
-          arrayOfElements[i].style.display='none';
+      if (iD == butList) {
+        iD.style.display='none'
+        butExpand.style.display='flex'
+        console.log('big hide')
       }
-      iD.style.display='block'
+      else {
+        var arrayOfElements=document.getElementsByClassName(cl);
+        var lengthOfArray=arrayOfElements.length;
+        for (var i=0; i<lengthOfArray;i++){
+            arrayOfElements[i].style.display='none';
+        }
+        iD.style.display='block'
+      }
     }
     function show(cl, iD) {
-      var arrayOfElements=document.getElementsByClassName(cl);
-      var lengthOfArray=arrayOfElements.length;
-      for (var i=0; i<lengthOfArray;i++){
-          arrayOfElements[i].style.display='block';
-          arrayOfElements[i].style.border='none';
+      if (iD == butList) {
+        iD.style.display='flex'
+        butExpand.style.display='none'
+        console.log('big show')
       }
-      iD.style.display='none';
+      else {
+        var arrayOfElements=document.getElementsByClassName(cl);
+        var lengthOfArray=arrayOfElements.length;
+        for (var i=0; i<lengthOfArray;i++){
+            arrayOfElements[i].style.display='block';
+            arrayOfElements[i].style.border='none';
+        }
+        iD.style.display='none';
+      }
     }
   </script>
-  <p class="button-ex-text">Please use the following buttons to hide statistics if the table is too wide for your screen or if you do not want to see that column.</p>
-  <div class="buttons">
-    <button class="pos btn button hide" type="button" onclick="hide('pos', posShow)">Hide Position</button>
-    <button id="posShow" class="btn button" type="button" onclick="show('pos', posShow)" style="display: none">Show Position</button>
-    <button class="team btn button hide" type="button" onclick="hide('team', teamShow)">Hide Team</button>
-    <button id="teamShow" class="btn button" type="button" onclick="show('team', teamShow)" style="display: none">Show Team</button>
-    <button class="points btn button hide" type="button" onclick="hide('points', pointsShow)">Hide Points</button>
-    <button id="pointsShow" class="btn button" type="button" onclick="show('points', pointsShow)" style="display: none">Show Points</button>
-    <button class="asst btn button hide" type="button" onclick="hide('asst', asstShow)">Hide Assists</button>
-    <button id="asstShow" class="btn button" type="button" onclick="show('asst', asstShow)" style="display: none">Show Assists</button>
-    <button class="re btn button hide" type="button" onclick="hide('re', reShow)">Hide Rebounds</button>
-    <button id="reShow" class="btn button" type="button" onclick="show('re', reShow)" style="display: none">Show Rebounds</button>
-    <button class="blk btn button hide" type="button" onclick="hide('blk', blkShow)">Hide Blocks</button>
-    <button id="blkShow" class="btn button" type="button" onclick="show('blk', blkShow)" style="display: none">Show Blocks</button>
-    <button class="stl btn button hide" type="button" onclick="hide('stl', stlShow)">Hide Steals</button>
-    <button id="stlShow" class="btn button" type="button" onclick="show('stl', stlShow)" style="display: none">Show Steals</button>
-    <button class="twoa btn button hide" type="button" onclick="hide('twoa', twoaShow)">Hide TwoPtFgAtt</button>
-    <button id="twoaShow" class="btn button" type="button" onclick="show('twoa', twoaShow)" style="display: none">Show TwoPtFgAtt</button>
-    <button class="twom btn button hide" type="button" onclick="hide('twom', twomShow)">Hide TwoPtFgMade</button>
-    <button id="twomShow" class="btn button" type="button" onclick="show('twom', twomShow)" style="display: none">Show TwoPtFgMade</button>
-    <button class="tha btn button hide" type="button" onclick="hide('tha', thaShow)">Hide ThreePtFgAtt</button>
-    <button id="thaShow" class="btn button" type="button" onclick="show('tha', thaShow)" style="display: none">Show ThreePtFgAtt</button>
-    <button class="thm btn button hide" type="button" onclick="hide('thm', thmShow)">Hide ThreePtFgMade</button>
-    <button id="thmShow" class="btn button" type="button" onclick="show('thm', thmShow)" style="display: none">Show ThreePtFgMade</button>
-    <button class="fta btn button hide" type="button" onclick="hide('fta', ftaShow)">Hide freeThrowAtt</button>
-    <button id="ftaShow" class="btn button" type="button" onclick="show('fta', ftaShow)" style="display: none">Show freeThrowAtt</button>
-    <button class="ftm btn button hide" type="button" onclick="hide('ftm', ftmShow)">Hide freeThrowMade</button>
-    <button id="ftmShow" class="btn button" type="button" onclick="show('ftm', ftmShow)" style="display: none">Show freeThrowMade</button>
+  <button id='butExpand' class=" btn big-button" onclick="show('', butList)" type='button'>[+] Click to toggle columns</button>
+  <div class="buttons", id='butList' style='display: none'>
+    <button class=" btn big-button" onclick="hide('', butList)" type='button'>[-] Click to hide column buttons</button>
+    <button class="pos btn button hide" type="button" onclick="hide('pos', posShow)">Position</button>
+    <button id="posShow" class="btn button" type="button" onclick="show('pos', posShow)" style="display: none">Position</button>
+    <button class="team btn button hide" type="button" onclick="hide('team', teamShow)">Team</button>
+    <button id="teamShow" class="btn button" type="button" onclick="show('team', teamShow)" style="display: none">Team</button>
+    <button class="points btn button hide" type="button" onclick="hide('points', pointsShow)">Points</button>
+    <button id="pointsShow" class="btn button" type="button" onclick="show('points', pointsShow)" style="display: none">Points</button>
+    <button class="asst btn button hide" type="button" onclick="hide('asst', asstShow)">Assists</button>
+    <button id="asstShow" class="btn button" type="button" onclick="show('asst', asstShow)" style="display: none">Assists</button>
+    <button class="re btn button hide" type="button" onclick="hide('re', reShow)">Rebounds</button>
+    <button id="reShow" class="btn button" type="button" onclick="show('re', reShow)" style="display: none">Rebounds</button>
+    <button class="blk btn button hide" type="button" onclick="hide('blk', blkShow)">Blocks</button>
+    <button id="blkShow" class="btn button" type="button" onclick="show('blk', blkShow)" style="display: none">Blocks</button>
+    <button class="stl btn button hide" type="button" onclick="hide('stl', stlShow)">Steals</button>
+    <button id="stlShow" class="btn button" type="button" onclick="show('stl', stlShow)" style="display: none">Steals</button>
+    <button class="twoa btn button hide" type="button" onclick="hide('twoa', twoaShow)">TwoPtFgAtt</button>
+    <button id="twoaShow" class="btn button" type="button" onclick="show('twoa', twoaShow)" style="display: none">TwoPtFgAtt</button>
+    <button class="twom btn button hide" type="button" onclick="hide('twom', twomShow)">TwoPtFgMade</button>
+    <button id="twomShow" class="btn button" type="button" onclick="show('twom', twomShow)" style="display: none">TwoPtFgMade</button>
+    <button class="tha btn button hide" type="button" onclick="hide('tha', thaShow)">ThreePtFgAtt</button>
+    <button id="thaShow" class="btn button" type="button" onclick="show('tha', thaShow)" style="display: none">ThreePtFgAtt</button>
+    <button class="thm btn button hide" type="button" onclick="hide('thm', thmShow)">ThreePtFgMade</button>
+    <button id="thmShow" class="btn button" type="button" onclick="show('thm', thmShow)" style="display: none">ThreePtFgMade</button>
+    <button class="fta btn button hide" type="button" onclick="hide('fta', ftaShow)">freeThrowAtt</button>
+    <button id="ftaShow" class="btn button" type="button" onclick="show('fta', ftaShow)" style="display: none">freeThrowAtt</button>
+    <button class="ftm btn button hide" type="button" onclick="hide('ftm', ftmShow)">freeThrowMade</button>
+    <button id="ftmShow" class="btn button" type="button" onclick="show('ftm', ftmShow)" style="display: none">freeThrowMade</button>
   </div>
-    <table class="table table-striped table-bordered table-hover" data-toggle="table" data-sortable="true" id="table">
-        <thead>
-            <tr>
-                <th data-sortable="true">First Name</th>
-                <th data-sortable="true"><%= link_to "Last Name", :sort => "last_name" %></th>
-                <th class="no_width"></th>
-                <th class="pos" data-sortable="true">Position</th>
-                <th class="no_width"></th>
-                <th class="team" data-sortable="true">Team Name</th>
-                <th class="no_width"></th>
-                <th class="points" data-sortable="true" title="points per game"><%= link_to "Points", :sort => "points" %></th>
-                <th class="no_width"></th>
-                <th class="asst"data-sortable="true" title="assists per game"><%= link_to "Assists", :sort => "assists" %></th>
-                <th class="no_width"></th>
-                <th class="re" data-sortable="true" title="rebounds per game"><%= link_to "Rebounds", :sort => "rebounds" %></th>
-                <th class="no_width"></th>
-                <th class="blk" data-sortable="true" title="blocks per game"><%= link_to "Blocks", :sort => "blocks" %></th>
-                <th class="no_width"></th>
-                <th class="stl" data-sortable="true" title="steals per game"><%= link_to "Steals", :sort => "steals" %></th>
-                <th class="no_width"></th>
-                <th class="twoa" data-sortable="true" title="two point field goal attempts per game"><%= link_to "2PA", :sort => "twoPtFgAtt" %></th>
-                <th class="no_width"></th>
-                <th class="twom" data-sortable="true" title="two point field goals made per game"><%= link_to "2PM", :sort => "twoPtFgMade" %></th>
-                <th class="no_width"></th>
-                <th class="tha" data-sortable="true" title="three point field goal attempts per game"><%= link_to "3PA", :sort => "threePtFgAtt" %></th>
-                <th class="no_width"></th>
-                <th class="thm" data-sortable="true" title="three point field goals made per game"><%= link_to "3PM", :sort => "threePtFgMade" %></th>
-                <th class="no_width"></th>
-                <th class="fta" data-sortable="true" title="free throw attempts per game"><%= link_to "FTA", :sort => "freeThrowAtt" %></th>
-                <th class="no_width"></th>
-                <th class="ftm" data-sortable="true" title="free throws made per game"><%= link_to "FTM", :sort => "freeThrowMade" %></th>
-            </tr>
-        </thead>
-        
-        <tbody>
-            <% @players.each do |player| %>
-                <tr>
-                    <td><%= link_to player.first_name, player %></td>
-                    <td><%= link_to player.last_name, player %></td>
-                    <td class="no_width"></td>
-                    <td class="pos"><%= player.position %></td>
-                    <td class="no_width"></td>
-                    <td class="team"><%= player.team_name %></td>
-                    <td class="no_width"></td>
-                    <td class="points"><%= player.points %></td>
-                    <td class="no_width"></td>
-                    <td class="asst"><%= player.assists %></td>
-                    <td class="no_width"></td>
-                    <td class="re"><%= player.rebounds %></td>
-                    <td class="no_width"></td>
-                    <td class="blk"><%= player.blocks %></td>
-                    <td class="no_width"></td>
-                    <td class="stl"><%= player.steals %></td>
-                    <td class="no_width"></td>
-                    <td class="twoa"><%= player.twoPtFgAtt %></td>
-                    <td class="no_width"></td>
-                    <td class="twom"><%= player.twoPtFgMade%></td>
-                    <td class="no_width"></td>
-                    <td class="tha"><%= player.threePtFgAtt %></td>
-                    <td class="no_width"></td>
-                    <td class="thm"><%= player.threePtFgMade %></td>
-                    <td class="no_width"></td>
-                    <td class="fta"><%= player.freeThrowAtt %></td>
-                    <td class="no_width"></td>
-                    <td class="ftm"><%= player.freeThrowMade %></td>
-                </tr>
-            <% end %>
-        </tbody>
-    </table>
+  
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th data-sortable="true">First Name</th>
+        <th data-sortable="true"><%= link_to "Last Name", :sort => "last_name" %></th>
+        <th class="no_width"></th>
+        <th data-sortable="true" class="pos">Position</th>
+        <th class="no_width"></th>
+        <th data-sortable="true" class="team">Team Name</th>
+        <th class="no_width"></th>
+        <th data-sortable="true" class="points"><%= link_to "Points", :sort => "points" %></th>
+        <th class="no_width"></th>
+        <th data-sortable="true" class="asst"><%= link_to "Assists", :sort => "assists" %></th>
+        <th class="no_width"></th>
+        <th data-sortable="true" class="re"><%= link_to "Rebounds", :sort => "rebounds" %></th>
+        <th class="no_width"></th>
+        <th data-sortable="true" class="blk"><%= link_to "Blocks", :sort => "blocks" %></th>
+        <th class="no_width"></th>
+        <th data-sortable="true" class="stl"><%= link_to "Steals", :sort => "steals" %></th>
+        <th class="no_width"></th>
+        <th data-sortable="true" class="twoa"><%= link_to "2PA", :sort => "twoPtFgAtt" %></th>
+        <th class="no_width"></th>
+        <th data-sortable="true" class="twom"><%= link_to "2PM", :sort => "twoPtFgMade" %></th>
+        <th class="no_width"></th>
+        <th data-sortable="true" class="tha"><%= link_to "3PA", :sort => "threePtFgAtt" %></th>
+        <th class="no_width"></th>
+        <th data-sortable="true" class="thm"><%= link_to "3PM", :sort => "threePtFgMade" %></th>
+        <th class="no_width"></th>
+        <th data-sortable="true" class="fta"><%= link_to "FTA", :sort => "freeThrowAtt" %></th>
+        <th class="no_width"></th>
+        <th data-sortable="true" class="ftm"><%= link_to "FTM", :sort => "freeThrowMade" %></th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @players.each do |player| %>
+        <tr>
+          <td><%= link_to player.first_name, player %></td>
+          <td><%= link_to player.last_name, player %></td>
+          <td class="no_width"></td>
+          <td class="pos"><%= player.position %></td>
+          <td class="no_width"></td>
+          <td class="team"><%= player.team_name %></td>
+          <td class="no_width"></td>
+          <td class="points"><%= player.points %></td>
+          <td class="no_width"></td>
+          <td class="asst"><%= player.assists %></td>
+          <td class="no_width"></td>
+          <td class="re"><%= player.rebounds %></td>
+          <td class="no_width"></td>
+          <td class="blk"><%= player.blocks %></td>
+          <td class="no_width"></td>
+          <td class="stl"><%= player.steals %></td>
+          <td class="no_width"></td>
+          <td class="twoa"><%= player.twoPtFgAtt %></td>
+          <td class="no_width"></td>
+          <td class="twom"><%= player.twoPtFgMade%></td>
+          <td class="no_width"></td>
+          <td class="tha"><%= player.threePtFgAtt %></td>
+          <td class="no_width"></td>
+          <td class="thm"><%= player.threePtFgMade %></td>
+          <td class="no_width"></td>
+          <td class="fta"><%= player.freeThrowAtt %></td>
+          <td class="no_width"></td>
+          <td class="ftm"><%= player.freeThrowMade %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
-
 <%= will_paginate @players, previous_label: h("<"), next_label: h(">") %>
 
 <hr class="separator">
