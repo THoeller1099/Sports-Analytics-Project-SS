@@ -44,9 +44,6 @@ gem 'rest-client', '~> 1.8'
 gem 'json', '~> 1.8', '>= 1.8.3'
 # another rest client
 gem 'httparty', '~> 0.13.7'
-# for svg web icons
-gem 'octicons'
-gem 'octicons_helper'
 
 
 group :development, :test do
