@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<html>
+<html onmousemove="check_session(<%= user_id_display %>);" >
   <head>
     <title>Statsketball</title>
     <%= csrf_meta_tags %>
@@ -24,14 +24,50 @@
         <h6><a class="nav-item nav-link font-weight-bold" href="/schedules" style="color: #727;">Schedules</a></h6>
       </div>
       <div class="alignRight">
-        <a class="nav-item nav-link font-weight-bold" href="/signup" style="color: #727;">Sign Up</a>
-        <a class="nav-item nav-link font-weight-bold" href="/login" style="color: #727;">Login</a>
-        <a class="nav-link font-weight-bold" href="/users/<%= user_id_display %>" style="color: #727;"><%= user_display %></a>
+        <a class="nav-item nav-link font-weight-bold logged-out" href="/signup" style="color: #727;">Sign Up</a>
+        <a class="nav-item nav-link font-weight-bold logged-out" href="/login" style="color: #727;">Log In</a>
+        <%= link_to "Log out", logout_path, method: :delete, class: "nav-item nav-link font-weight-bold purple_text logged-in" %>
+        <a class="nav-link font-weight-bold logged-in" href="/users/<%= user_id_display %>" style="color: #727;"><%= user_display %></a>
       </div>
     </div>
   </header>
+  
+  <script>
+  function confirmload() {
+    console.log('confirmed');
+  }
+  function check_session(user_display) {
+    console.log(user_display);
+    var arrayOfElements=document.getElementsByClassName('logged-out');
+    var lengthOfArray=arrayOfElements.length;
+    if (user_display) {
+      for (var i=0; i<lengthOfArray;i++){
+          arrayOfElements[i].style.display='none';
+      }
+    }
+    else {
+      for (var i=0; i<lengthOfArray;i++){
+          arrayOfElements[i].style.display='flex';
+      }
+    }
+    
+    var arrayOfElements=document.getElementsByClassName('logged-in');
+    var lengthOfArray=arrayOfElements.length;
+    if (user_display) {
+      for (var i=0; i<lengthOfArray;i++){
+          arrayOfElements[i].style.display='flex';
+      }
+    }
+    else {
+      for (var i=0; i<lengthOfArray;i++){
+          arrayOfElements[i].style.display='none';
+      }
+    }
+    
+  }
+  </script>
 
-  <body>
+  <body onload="check_session(<%= user_id_display %>);">
     <%= yield %>
     <footer class="page-footer" id="footer">
       <div class="footer-list">
