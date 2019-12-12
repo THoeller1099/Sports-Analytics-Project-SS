@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  include SessionsHelper
 
   # GET /users
   # GET /users.json
@@ -11,7 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    @players = Player.where(user_id:1)
+    @players = Player.where(user_id:user_id_display).order(params[:sort]).paginate(:page => params[:page], :per_page => 25).reverse_order
   end
 
   # GET /users/new
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to login_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }

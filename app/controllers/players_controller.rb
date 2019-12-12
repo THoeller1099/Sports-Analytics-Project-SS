@@ -1,5 +1,6 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
+  include SessionsHelper
 
   # GET /players
   # GET /players.json
@@ -10,7 +11,7 @@ class PlayersController < ApplicationController
   # GET /players/1
   # GET /players/1.json
   def show
-    @player.user_id = 1
+    @player.user_id = current_user.id
     @player.save
   end
 
