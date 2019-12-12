@@ -7,6 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+user1 = {name: "Harrison Pratt", email:"hpratt@statsketball.com", password:"hpratt"}
+user2 = {name: "Ted Hoeller", email: "thoeller@statsketball.com", password:"thoeller"}
+user3 = {name: "Mason OConnor", email:"moconnor@statsketball.com", password:"moconnor"}
+user4 = {name: "Ben Gertz", email:"bgertz@statsketball.com", password: "bgertz"}
+user5 = {name: "Adam Silver", email:"asilver@statsketball.com", password: "asilver"}
+User.create([user1, user2, user3, user4, user5])
+
+
 require 'http'
 
 require('daru')
