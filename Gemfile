@@ -45,7 +45,7 @@ gem 'rest-client', '~> 1.8'
 # JSON parser
 gem 'json', '~> 1.8', '>= 1.8.3'
 # another rest client
-gem 'httparty', '~> 0.13.7'
+gem 'httparty', '~> 0.21.0'
 # for svg web icons
 gem 'octicons'
 gem 'octicons_helper'
